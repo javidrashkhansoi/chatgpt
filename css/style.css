@@ -492,6 +492,25 @@ html {
   padding-block: 10px;
 }
 
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 5px;
+  padding-inline: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background-color: #80f;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.header__button:focus-visible {
+  background-color: #f80;
+}
+
 .header-logo {
   flex: 1 1 auto;
   -webkit-user-select: none;
@@ -702,21 +721,34 @@ html {
 
 .modules-slide__text ul,
 .modules-slide__text ol {
+  -webkit-padding-start: 20px;
+  padding-inline-start: 20px;
+}
+
+.modules-slide__text ul:not([data-nocolumns], .modules-slide__text ul ul,
+.modules-slide__text ol ul),
+.modules-slide__text ol:not([data-nocolumns], .modules-slide__text ul ul,
+.modules-slide__text ol ul) {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
   -webkit-column-gap: 30px;
   -moz-column-gap: 30px;
   column-gap: 30px;
-  -webkit-padding-start: 20px;
-  padding-inline-start: 20px;
+}
+
+.modules-slide__text ul:not([data-nocolumns], .modules-slide__text ul ul,
+.modules-slide__text ol ul) li,
+.modules-slide__text ol:not([data-nocolumns], .modules-slide__text ul ul,
+.modules-slide__text ol ul) li {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  break-inside: avoid;
 }
 
 .modules-slide__text ul li,
 .modules-slide__text ol li {
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  break-inside: avoid;
+  max-inline-size: 768px;
 }
 
 .modules-slide__text ul li:not(:last-child),
@@ -744,6 +776,10 @@ html {
 }
 
 @media (hover: hover) {
+  .header__button:hover {
+    background-color: #f80;
+  }
+
   .header-nav__link:hover {
     color: #f80;
   }
