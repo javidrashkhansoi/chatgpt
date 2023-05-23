@@ -775,6 +775,42 @@ html {
   text-align: center;
 }
 
+.staff {
+  padding-block: 50px;
+}
+
+.staff__title {
+  -webkit-margin-after: 30px;
+  margin-block-end: 30px;
+}
+
+.staff__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.staff__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.1);
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 0.1);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.staff__name {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.staff__job {
+  font-size: 12px;
+}
+
 @media (hover: hover) {
   .header__button:hover {
     background-color: #f80;
